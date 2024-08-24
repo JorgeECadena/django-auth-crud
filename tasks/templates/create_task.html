@@ -1,0 +1,28 @@
+{% extends './layouts/base.html' %}
+
+{% block content %}
+
+<body class="bg-dark-subtle">
+	<main class="container">
+		<div class="row">
+			<div class="col-md-4 offset-md-4 mt-5">
+
+				<form action="/tasks/create/" method="POST" class="card card-body bg-light-subtle">
+					<h1>Create Task</h1>
+					
+					{{error}}
+					{% csrf_token %}
+					
+					{{form.as_p}}
+
+					<button class="btn btn-secondary">
+						Save
+					</button>
+				</form>
+
+			</div>
+		</div>
+	</main>
+</body>
+
+{% endblock %}
